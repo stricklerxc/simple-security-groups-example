@@ -1,0 +1,10 @@
+- id: TestSecurityGroup
+  name: Test SG
+  description: Test Security Group
+  rules:
+    ingress:
+      - NetworkHttp | 192.168.1.0/8:80 | Allow HTTP Traffic from internal network.
+      - NetworkSsh | 192.168.1.1/8:22 | Allow SSH Traffic from internal network.
+      - NetworkTcp | 192.168.1.0/24:0-65535 | Allow all tcp traffic from subnet.
+      - NetworkUdp | udp://192.168.1.0/24:0-65535 | Allow all udp traffic from subnet.
+
